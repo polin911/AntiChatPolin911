@@ -7,23 +7,54 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0EB68EA9B5AD6D94496553D2 /* Pods_AntiChatPolin911.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB92E116ED304BE40F8E8C44 /* Pods_AntiChatPolin911.framework */; };
 		36461D4A1F6D53DF009C2447 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36461D491F6D53DF009C2447 /* AppDelegate.swift */; };
-		36461D4C1F6D53DF009C2447 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36461D4B1F6D53DF009C2447 /* ViewController.swift */; };
 		36461D4F1F6D53DF009C2447 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36461D4D1F6D53DF009C2447 /* Main.storyboard */; };
 		36461D521F6D53DF009C2447 /* AntiChatPolin911.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 36461D501F6D53DF009C2447 /* AntiChatPolin911.xcdatamodeld */; };
 		36461D541F6D53DF009C2447 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36461D531F6D53DF009C2447 /* Assets.xcassets */; };
 		36461D571F6D53DF009C2447 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36461D551F6D53DF009C2447 /* LaunchScreen.storyboard */; };
+		36461D601F6D550F009C2447 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36461D5F1F6D550F009C2447 /* MainVC.swift */; };
+		36461D631F6D5563009C2447 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36461D621F6D5563009C2447 /* ChatMessage.swift */; };
+		36461D661F6D57DD009C2447 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36461D651F6D57DD009C2447 /* ChatCell.swift */; };
+		36461D6A1F6E5F8C009C2447 /* PubNubConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36461D691F6E5F8C009C2447 /* PubNubConnection.swift */; };
+		36461D6C1F6E7877009C2447 /* MenuTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36461D6B1F6E7877009C2447 /* MenuTVC.swift */; };
+		36461D6E1F6E7ABD009C2447 /* MenuTranManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36461D6D1F6E7ABD009C2447 /* MenuTranManager.swift */; };
+		36461D701F6E7EB9009C2447 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36461D6F1F6E7EB9009C2447 /* Global.swift */; };
+		36461D721F6E8D37009C2447 /* ChageUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36461D711F6E8D37009C2447 /* ChageUserCell.swift */; };
+		36461D741F6E99EF009C2447 /* PubTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36461D731F6E99EF009C2447 /* PubTest.swift */; };
+		36461D761F6EA2EC009C2447 /* PubNub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36461D751F6EA2EC009C2447 /* PubNub.framework */; };
+		36461D781F6EA2F4009C2447 /* CocoaLumberjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36461D771F6EA2F4009C2447 /* CocoaLumberjack.framework */; };
+		36461D7A1F7104E1009C2447 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36461D791F7104E1009C2447 /* WelcomeVC.swift */; };
+		36461D7C1F710983009C2447 /* imgCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36461D7B1F710983009C2447 /* imgCollectionCell.swift */; };
+		36461D7E1F710F7D009C2447 /* NameChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36461D7D1F710F7D009C2447 /* NameChatCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		36461D461F6D53DF009C2447 /* AntiChatPolin911.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AntiChatPolin911.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36461D491F6D53DF009C2447 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		36461D4B1F6D53DF009C2447 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		36461D4E1F6D53DF009C2447 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		36461D511F6D53DF009C2447 /* AntiChatPolin911.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AntiChatPolin911.xcdatamodel; sourceTree = "<group>"; };
 		36461D531F6D53DF009C2447 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36461D561F6D53DF009C2447 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36461D581F6D53DF009C2447 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36461D5F1F6D550F009C2447 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		36461D621F6D5563009C2447 /* ChatMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		36461D651F6D57DD009C2447 /* ChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		36461D681F6D5B1C009C2447 /* PubChat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PubChat.h; sourceTree = "<group>"; };
+		36461D691F6E5F8C009C2447 /* PubNubConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PubNubConnection.swift; sourceTree = "<group>"; };
+		36461D6B1F6E7877009C2447 /* MenuTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTVC.swift; sourceTree = "<group>"; };
+		36461D6D1F6E7ABD009C2447 /* MenuTranManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTranManager.swift; sourceTree = "<group>"; };
+		36461D6F1F6E7EB9009C2447 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		36461D711F6E8D37009C2447 /* ChageUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChageUserCell.swift; sourceTree = "<group>"; };
+		36461D731F6E99EF009C2447 /* PubTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PubTest.swift; sourceTree = "<group>"; };
+		36461D751F6EA2EC009C2447 /* PubNub.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PubNub.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/AntiChatPolin911-chwiegihtoyfmiaicwzmlawmlgsh/Build/Products/Debug-iphonesimulator/PubNub/PubNub.framework"; sourceTree = "<group>"; };
+		36461D771F6EA2F4009C2447 /* CocoaLumberjack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjack.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/AntiChatPolin911-chwiegihtoyfmiaicwzmlawmlgsh/Build/Products/Debug-iphonesimulator/CocoaLumberjack/CocoaLumberjack.framework"; sourceTree = "<group>"; };
+		36461D791F7104E1009C2447 /* WelcomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
+		36461D7B1F710983009C2447 /* imgCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = imgCollectionCell.swift; sourceTree = "<group>"; };
+		36461D7D1F710F7D009C2447 /* NameChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameChatCell.swift; sourceTree = "<group>"; };
+		424DF90D537A4E1FB572D5E4 /* Pods-AntiChatPolin911.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AntiChatPolin911.release.xcconfig"; path = "Pods/Target Support Files/Pods-AntiChatPolin911/Pods-AntiChatPolin911.release.xcconfig"; sourceTree = "<group>"; };
+		BB92E116ED304BE40F8E8C44 /* Pods_AntiChatPolin911.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AntiChatPolin911.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAD59902E5ECB0D7ADB93030 /* Pods-AntiChatPolin911.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AntiChatPolin911.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AntiChatPolin911/Pods-AntiChatPolin911.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +62,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36461D781F6EA2F4009C2447 /* CocoaLumberjack.framework in Frameworks */,
+				36461D761F6EA2EC009C2447 /* PubNub.framework in Frameworks */,
+				0EB68EA9B5AD6D94496553D2 /* Pods_AntiChatPolin911.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +76,8 @@
 			children = (
 				36461D481F6D53DF009C2447 /* AntiChatPolin911 */,
 				36461D471F6D53DF009C2447 /* Products */,
+				95CF35EA8F9C5720D15E2B53 /* Pods */,
+				589FC024779A2BECEB30D3BF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,8 +92,11 @@
 		36461D481F6D53DF009C2447 /* AntiChatPolin911 */ = {
 			isa = PBXGroup;
 			children = (
+				36461D671F6D5AD3009C2447 /* Files */,
+				36461D641F6D5794009C2447 /* Views */,
+				36461D611F6D5536009C2447 /* Models */,
+				36461D5E1F6D54E9009C2447 /* Controllers */,
 				36461D491F6D53DF009C2447 /* AppDelegate.swift */,
-				36461D4B1F6D53DF009C2447 /* ViewController.swift */,
 				36461D4D1F6D53DF009C2447 /* Main.storyboard */,
 				36461D531F6D53DF009C2447 /* Assets.xcassets */,
 				36461D551F6D53DF009C2447 /* LaunchScreen.storyboard */,
@@ -67,6 +106,66 @@
 			path = AntiChatPolin911;
 			sourceTree = "<group>";
 		};
+		36461D5E1F6D54E9009C2447 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				36461D5F1F6D550F009C2447 /* MainVC.swift */,
+				36461D791F7104E1009C2447 /* WelcomeVC.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		36461D611F6D5536009C2447 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				36461D621F6D5563009C2447 /* ChatMessage.swift */,
+				36461D691F6E5F8C009C2447 /* PubNubConnection.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		36461D641F6D5794009C2447 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				36461D651F6D57DD009C2447 /* ChatCell.swift */,
+				36461D6B1F6E7877009C2447 /* MenuTVC.swift */,
+				36461D6D1F6E7ABD009C2447 /* MenuTranManager.swift */,
+				36461D711F6E8D37009C2447 /* ChageUserCell.swift */,
+				36461D7B1F710983009C2447 /* imgCollectionCell.swift */,
+				36461D7D1F710F7D009C2447 /* NameChatCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		36461D671F6D5AD3009C2447 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				36461D681F6D5B1C009C2447 /* PubChat.h */,
+				36461D6F1F6E7EB9009C2447 /* Global.swift */,
+				36461D731F6E99EF009C2447 /* PubTest.swift */,
+			);
+			name = Files;
+			sourceTree = "<group>";
+		};
+		589FC024779A2BECEB30D3BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				36461D771F6EA2F4009C2447 /* CocoaLumberjack.framework */,
+				36461D751F6EA2EC009C2447 /* PubNub.framework */,
+				BB92E116ED304BE40F8E8C44 /* Pods_AntiChatPolin911.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		95CF35EA8F9C5720D15E2B53 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FAD59902E5ECB0D7ADB93030 /* Pods-AntiChatPolin911.debug.xcconfig */,
+				424DF90D537A4E1FB572D5E4 /* Pods-AntiChatPolin911.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +173,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 36461D5B1F6D53DF009C2447 /* Build configuration list for PBXNativeTarget "AntiChatPolin911" */;
 			buildPhases = (
+				9E3ADC54D959448F45C773F4 /* [CP] Check Pods Manifest.lock */,
 				36461D421F6D53DF009C2447 /* Sources */,
 				36461D431F6D53DF009C2447 /* Frameworks */,
 				36461D441F6D53DF009C2447 /* Resources */,
+				1FF78AF954F979404BCD4E09 /* [CP] Embed Pods Frameworks */,
+				A607DD1128784FB480165CA1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -135,14 +237,73 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1FF78AF954F979404BCD4E09 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AntiChatPolin911/Pods-AntiChatPolin911-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E3ADC54D959448F45C773F4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A607DD1128784FB480165CA1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AntiChatPolin911/Pods-AntiChatPolin911-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		36461D421F6D53DF009C2447 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				36461D521F6D53DF009C2447 /* AntiChatPolin911.xcdatamodeld in Sources */,
-				36461D4C1F6D53DF009C2447 /* ViewController.swift in Sources */,
+				36461D631F6D5563009C2447 /* ChatMessage.swift in Sources */,
+				36461D741F6E99EF009C2447 /* PubTest.swift in Sources */,
+				36461D7A1F7104E1009C2447 /* WelcomeVC.swift in Sources */,
+				36461D7C1F710983009C2447 /* imgCollectionCell.swift in Sources */,
+				36461D601F6D550F009C2447 /* MainVC.swift in Sources */,
+				36461D661F6D57DD009C2447 /* ChatCell.swift in Sources */,
 				36461D4A1F6D53DF009C2447 /* AppDelegate.swift in Sources */,
+				36461D7E1F710F7D009C2447 /* NameChatCell.swift in Sources */,
+				36461D721F6E8D37009C2447 /* ChageUserCell.swift in Sources */,
+				36461D6E1F6E7ABD009C2447 /* MenuTranManager.swift in Sources */,
+				36461D6C1F6E7877009C2447 /* MenuTVC.swift in Sources */,
+				36461D6A1F6E5F8C009C2447 /* PubNubConnection.swift in Sources */,
+				36461D701F6E7EB9009C2447 /* Global.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +426,7 @@
 		};
 		36461D5C1F6D53DF009C2447 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FAD59902E5ECB0D7ADB93030 /* Pods-AntiChatPolin911.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CBVCE8QCE8;
@@ -278,6 +440,7 @@
 		};
 		36461D5D1F6D53DF009C2447 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 424DF90D537A4E1FB572D5E4 /* Pods-AntiChatPolin911.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CBVCE8QCE8;
@@ -308,6 +471,7 @@
 				36461D5D1F6D53DF009C2447 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

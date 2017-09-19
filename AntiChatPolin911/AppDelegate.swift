@@ -8,18 +8,65 @@
 
 import UIKit
 import CoreData
+import PubNub
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, PNObjectEventListener {
 
     var window: UIWindow?
-
+    var client: PubNub?
+    var apnsID: NSString?
+    var dToken: Data?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let notificationType:UIUserNotificationType = [UIUserNotificationType.alert,  UIUserNotificationType.badge, UIUserNotificationType.sound]
+        //        UIUserNotificationSettings(
+        let settings = UIUserNotificationSettings(types: notificationType, categories: nil)
+        application.registerUserNotificationSettings(settings)
+        application.registerForRemoteNotifications()
         return true
     }
 
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        let tokenChars = (deviceToken as NSData).bytes.bindMemory(to: CChar.self, capacity: deviceToken.count)
+        var tokenString = ""
+        
+        for i in 0 ..< deviceToken.count {
+            tokenString += String(format: "%02.2hhx", arguments: [tokenChars[i]])
+        }
+        
+        apnsID = tokenString as NSString
+        print("******apnsID is \(apnsID)")
+        dToken = deviceToken
+        print("******dToken is \(dToken)")
+        UserDefaults.standard.set(deviceToken, forKey: "deviceToken")
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("***********didFailToRegisterForRemoteNotificationsWithError")
+        print(error)
+    }
+    
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        
+        print("******Getting notification*****")
+        
+        //        var message: NSString = ""
+        //        var alert: AnyObject? = userInfo["aps"]
+        //
+        //        print(userInfo["aps"])
+        //
+        //        if((alert) != nil){
+        //            var alert = UIAlertView()
+        //            alert.title = "Title"
+        //            alert.message = "Message"
+        //            alert.addButtonWithTitle("OK")
+        //            alert.show()
+        //        }
+        
+    }
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
@@ -41,7 +88,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
-        self.saveContext()
+        print("App is being terminated so unsubscribe should happen here")
+        client?.unsubscribeFromChannels([chan], withPresence: true)
+        
+        client?.removeListener(self)
+        //self.saveContext()
     }
 
     // MARK: - Core Data stack
@@ -89,5 +140,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+    
 }
 
