@@ -27,6 +27,8 @@
 		36461D7A1F7104E1009C2447 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36461D791F7104E1009C2447 /* WelcomeVC.swift */; };
 		36461D7C1F710983009C2447 /* imgCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36461D7B1F710983009C2447 /* imgCollectionCell.swift */; };
 		36461D7E1F710F7D009C2447 /* NameChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36461D7D1F710F7D009C2447 /* NameChatCell.swift */; };
+		36461D801F7149AD009C2447 /* UsersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36461D7F1F7149AD009C2447 /* UsersVC.swift */; };
+		36461D821F714A1F009C2447 /* UsersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36461D811F714A1F009C2447 /* UsersCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		36461D791F7104E1009C2447 /* WelcomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		36461D7B1F710983009C2447 /* imgCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = imgCollectionCell.swift; sourceTree = "<group>"; };
 		36461D7D1F710F7D009C2447 /* NameChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameChatCell.swift; sourceTree = "<group>"; };
+		36461D7F1F7149AD009C2447 /* UsersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersVC.swift; sourceTree = "<group>"; };
+		36461D811F714A1F009C2447 /* UsersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersCell.swift; sourceTree = "<group>"; };
 		424DF90D537A4E1FB572D5E4 /* Pods-AntiChatPolin911.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AntiChatPolin911.release.xcconfig"; path = "Pods/Target Support Files/Pods-AntiChatPolin911/Pods-AntiChatPolin911.release.xcconfig"; sourceTree = "<group>"; };
 		BB92E116ED304BE40F8E8C44 /* Pods_AntiChatPolin911.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AntiChatPolin911.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD59902E5ECB0D7ADB93030 /* Pods-AntiChatPolin911.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AntiChatPolin911.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AntiChatPolin911/Pods-AntiChatPolin911.debug.xcconfig"; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 			children = (
 				36461D5F1F6D550F009C2447 /* MainVC.swift */,
 				36461D791F7104E1009C2447 /* WelcomeVC.swift */,
+				36461D7F1F7149AD009C2447 /* UsersVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -133,6 +138,7 @@
 				36461D711F6E8D37009C2447 /* ChageUserCell.swift */,
 				36461D7B1F710983009C2447 /* imgCollectionCell.swift */,
 				36461D7D1F710F7D009C2447 /* NameChatCell.swift */,
+				36461D811F714A1F009C2447 /* UsersCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -295,12 +301,14 @@
 				36461D741F6E99EF009C2447 /* PubTest.swift in Sources */,
 				36461D7A1F7104E1009C2447 /* WelcomeVC.swift in Sources */,
 				36461D7C1F710983009C2447 /* imgCollectionCell.swift in Sources */,
+				36461D801F7149AD009C2447 /* UsersVC.swift in Sources */,
 				36461D601F6D550F009C2447 /* MainVC.swift in Sources */,
 				36461D661F6D57DD009C2447 /* ChatCell.swift in Sources */,
 				36461D4A1F6D53DF009C2447 /* AppDelegate.swift in Sources */,
 				36461D7E1F710F7D009C2447 /* NameChatCell.swift in Sources */,
 				36461D721F6E8D37009C2447 /* ChageUserCell.swift in Sources */,
 				36461D6E1F6E7ABD009C2447 /* MenuTranManager.swift in Sources */,
+				36461D821F714A1F009C2447 /* UsersCell.swift in Sources */,
 				36461D6C1F6E7877009C2447 /* MenuTVC.swift in Sources */,
 				36461D6A1F6E5F8C009C2447 /* PubNubConnection.swift in Sources */,
 				36461D701F6E7EB9009C2447 /* Global.swift in Sources */,

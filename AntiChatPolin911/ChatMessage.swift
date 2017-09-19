@@ -13,30 +13,17 @@ class ChatMessage: NSObject {
     var username: String
     var message : String
     var time    : String
+    var image   : String
 
     
-    init(username: String, message: String, time: String) {
+    init(username: String, message: String, time: String, image: String) {
         self.username = username
         self.message  = message
         self.time     = time
+        self.image    = image
   
     }
     
    
 }
-class ChatMessage2: NSObject {
-    
-    var username: String
-    var message : String
-    var time    : String
 
-    
-    init(username: String, message: String, time: String) {
-        self.username = username
-        self.message  = message
-        self.time     = time
-
-    }
-    
-    
-}

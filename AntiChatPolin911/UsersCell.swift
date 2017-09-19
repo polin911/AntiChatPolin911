@@ -1,20 +1,16 @@
 //
-//  ChatCell.swift
+//  UsersCell.swift
 //  AntiChatPolin911
 //
-//  Created by Polina on 16.09.17.
+//  Created by Polina on 19.09.17.
 //  Copyright © 2017 Polina. All rights reserved.
 //
 
 import UIKit
 
-class ChatCell: UITableViewCell {
+class UsersCell: UITableViewCell {
 
-    @IBOutlet var timeLbl: UILabel!
-    @IBOutlet var chatNameLbl: UILabel!
-    @IBOutlet var chatTxtLbl: UILabel!
-    @IBOutlet var chatImage: UIImageView!
-    
+    @IBOutlet var userName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -11,6 +11,8 @@ import PubNub
 
 class MainVC: UIViewController, PNObjectEventListener, MenuTransitionManagerDelegate {
 
+    @IBOutlet var userImg: UIImageView!
+    
     @IBOutlet var chatNameLbl: UILabel!
     @IBOutlet var chatTableView: UITableView!
     
@@ -26,8 +28,6 @@ class MainVC: UIViewController, PNObjectEventListener, MenuTransitionManagerDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        updateView()
         
     }
     override func viewWillDisappear(_ animated: Bool) {
@@ -37,33 +37,7 @@ class MainVC: UIViewController, PNObjectEventListener, MenuTransitionManagerDele
     
     override func viewWillAppear(_ animated: Bool) {
         self.title = chan
-        let appDel = UIApplication.shared.delegate! as! AppDelegate
-        
-//        NotificationCenter.default.addObserver(self, selector: #selector(MainVC.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-//        
-//        NotificationCenter.default.addObserver(self, selector: #selector(MainVC.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-//        
-//        for subview in self.view.subviews
-//        {
-//            if (subview.isKind(of: UITextField.self))
-//            {
-//                let textField = subview as! UITextField
-//                textField.addTarget(self, action: #selector(MainVC.textFieldDidReturn(_:)), for: UIControlEvents.editingDidEndOnExit)
-//                
-//                textField.addTarget(self, action: #selector(UITextFieldDelegate.textFieldDidBeginEditing(_:)), for: UIControlEvents.editingDidBegin)
-//                
-//            }
-//        }
-//        
-//        if(userName != ""){
-//            joinChannel(chan)
-//        }
-//        
-//        if (nameChanged) { // Name was Changed in the change name view
-//            self.initPubNub()
-//            nameChanged = false
-//        }
-        
+        updateView()
     }
     
 
@@ -71,88 +45,27 @@ class MainVC: UIViewController, PNObjectEventListener, MenuTransitionManagerDele
     func updateView() {
         self.chatTableView.delegate   = self
         self.chatTableView.dataSource = self
+        initPubNub()
         updateTableview()
-        //showIntroModal()
+        userImg.image = UIImage(named: imgName)
+
     }
     ///////////////////////////////MARK: PubNubConnection
 
-    
-    //    func returnViewToInitialFrame()
-//    {
-//        let initialViewRect: CGRect = CGRect(x: 0.0, y: 0.0, width: self.view.frame.size.width, height: self.view.frame.size.height)
-//        
-//        if (!initialViewRect.equalTo(self.view.frame))
-//        {
-//            UIView.animate(withDuration: 0.2, animations: {
-//                self.view.frame = initialViewRect
-//            });
-//        }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let menuTableViewController = segue.destination as! MenuTableViewController
+//        menuTableViewController.transitioningDelegate = self.menuTransitionManager
+//        self.menuTransitionManager.delegate = self
 //    }
-//    
-//    func keyboardWillShow(_ notification: Notification)
-//    {
-//        self.keyboardIsShowing = true
-//        
-//        if let info = notification.userInfo {
-//            self.keyboardFrame = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-//            self.arrangeViewOffsetFromKeyboard()
-//        }
 //        
 //    }
+//
 //    
-//    func keyboardWillHide(_ notification: Notification)
-//    {
-//        self.keyboardIsShowing = false
-//        
-//        self.returnViewToInitialFrame()
-//    }
-//    
-//    
-//    func showIntroModal() {
-//        if (!introModalDidDisplay) {
-//            
-//            let loginAlert:UIAlertController = UIAlertController(title: "New User", message: "Please enter your name", preferredStyle: UIAlertControllerStyle.alert)
-//            
-//            loginAlert.addTextField(configurationHandler: {
-//                textfield in
-//                textfield.placeholder = "What is your name?"
-//            })
-//            
-//            loginAlert.addAction(UIAlertAction(title: "Go", style: UIAlertActionStyle.default, handler: {alertAction in
-//                let textFields:NSArray = loginAlert.textFields! as NSArray
-//                let usernameTextField:UITextField = textFields.object(at: 0) as! UITextField
-//                userName = usernameTextField.text!
-//                userName = userName.replacingOccurrences(of: " ", with: "_", options: NSString.CompareOptions.literal, range: nil)
-//                if(userName == ""){
-//                    self.showIntroModal()
-//                }
-//                else{
-//                    self.introModalDidDisplay = true
-//                    self.initPubNub()
-//                }
-//                
-//            }))
-//            
-//            self.present(loginAlert, animated: true, completion: nil)
-//            
-//        }
-//        
-//    }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let menuTableViewController = segue.destination as! MenuTableViewController
-        menuTableViewController.transitioningDelegate = self.menuTransitionManager
-        self.menuTransitionManager.delegate = self
-        
-    }
-
-    
     func dismiss() {
         self.dismiss(animated: true, completion: nil)
     }
     
     func initPubNub(){
-        print("Init Pubnub")
-        
         let appDel = UIApplication.shared.delegate! as! AppDelegate
         
         appDel.client?.unsubscribeFromChannels([chan], withPresence: true)
@@ -215,11 +128,12 @@ class MainVC: UIViewController, PNObjectEventListener, MenuTransitionManagerDele
                 // if(json?["type"] as AnyObject? as? String != "Chat"){ continue }
                 let usernameJson = (json?["username"] as AnyObject? as? String) ?? "" // to get rid of null
                 let namesJson = (json?["name"] as AnyObject? as? String) ?? ""
-                let textJson  =  (json?["message"]  as AnyObject? as? String) ?? ""
-                let timeJson  =  (json?["time"]  as AnyObject? as? String) ?? ""
+                let textJson  = (json?["message"]  as AnyObject? as? String) ?? ""
+                let timeJson  = (json?["time"]  as AnyObject? as? String) ?? ""
+                let imgJson   = (json?["image"] as AnyObject as? String) ?? ""
                 
                 
-                list.append(ChatMessage(username: usernameJson, message: textJson, time: timeJson))
+                list.append(ChatMessage(username: usernameJson, message: textJson, time: timeJson, image: imgJson))
             }
            chatTableView.reloadData()
             
@@ -276,13 +190,14 @@ class MainVC: UIViewController, PNObjectEventListener, MenuTransitionManagerDele
         print("from client!!!!!!!!!!!!!!!!!!!!!!!\(message.data)")
         print("*******UUID from message IS \(message.uuid)")
         
-        var stringData  = message.data.message as! NSDictionary
-        var stringName  = stringData["username"] as! String
-        var stringText  = stringData["message"] as! String
-        var stringTime  = stringData["time"] as! String
+        var stringData  = message.data.message as? NSDictionary
+        var stringName  = stringData?["username"] as! String
+        var stringText  = stringData?["message"] as! String
+        var stringTime  = stringData?["time"] as! String
+        var stringImg   = stringData?["image"] as! String
         
         
-        var newMessage = ChatMessage(username: stringName, message: stringText, time: stringTime)
+        var newMessage = ChatMessage(username: stringName, message: stringText, time: stringTime, image: stringImg)
         
         chatMesArray.append(newMessage)
         updateChat()
@@ -302,20 +217,20 @@ class MainVC: UIViewController, PNObjectEventListener, MenuTransitionManagerDele
         
         switch event.data.presenceEvent{
         case "join":
-            var pubChat = ChatMessage(username: "", message: "\(event.data.presence.uuid?.uppercased())", time: getTime())
+            var pubChat = ChatMessage(username: "", message: "\(event.data.presence.uuid?.uppercased())", time: getTime(), image: "")
             
             chatMesArray.append(pubChat)
             
         case "leave":
-            var pubChat = ChatMessage(username: "", message: "\(event.data.presence.uuid?.uppercased()) left the chat", time: getTime())
+            var pubChat = ChatMessage(username: "", message: "\(event.data.presence.uuid?.uppercased()) left the chat", time: getTime(),image: "")
             chatMesArray.append(pubChat)
             
         case "timeout":
-            var pubChat = ChatMessage(username: "", message: "\(event.data.presence.uuid?.uppercased()) has timed out", time: getTime())
+            var pubChat = ChatMessage(username: "", message: "\(event.data.presence.uuid?.uppercased()) has timed out", time: getTime(),image: "")
             chatMesArray.append(pubChat)
             
         default:
-            var pubChat = ChatMessage(username: "", message: "\(event.data.presence.uuid?.uppercased()) has timed out", time: getTime())
+            var pubChat = ChatMessage(username: "", message: "\(event.data.presence.uuid?.uppercased()) has timed out", time: getTime(),image: "")
             chatMesArray.append(pubChat)
             
         }
@@ -361,7 +276,7 @@ class MainVC: UIViewController, PNObjectEventListener, MenuTransitionManagerDele
         let message = messageTxtField.text
         if(message == "") {return}
         else{
-            let pubChat = ChatMessage(username: userName, message: messageTxtField.text!, time: getTime())
+            let pubChat = ChatMessage(username: userName, message: messageTxtField.text!, time: getTime(), image: imgName)
             
             let newDict = chatMessageToDictionary(pubChat)
             
@@ -386,8 +301,9 @@ extension MainVC: UITableViewDataSource {
         
       
         cell.chatNameLbl.text = chatMesArray[indexPath.row].username
-        
         cell.chatTxtLbl.text  = chatMesArray[indexPath.row].message
+        cell.chatImage.image  = UIImage(named:(chatMesArray[indexPath.row].image))
+        cell.timeLbl.text     = chatMesArray[indexPath.row].time
         
         return cell
     }
