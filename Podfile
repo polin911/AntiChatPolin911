@@ -9,5 +9,5 @@ target 'AntiChatPolin911' do
 pod "PubNub", "~> 4"
 
   # Pods for AntiChatPolin911
-pod 'CocoaLumberjack/Swift'
+
 end

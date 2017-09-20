@@ -21,7 +21,7 @@ var imgName     = "1.png"
 func chatMessageToDictionary(_ chatmessage: ChatMessage) -> [String: NSString]{
     return [
         "username": NSString(string: chatmessage.username),
-        "message" : NSString(string: chatmessage.message),
+        "text"    : NSString(string: chatmessage.text),
         "time"    : NSString(string: chatmessage.time),
         "image"   : NSString(string: chatmessage.image)
     ]

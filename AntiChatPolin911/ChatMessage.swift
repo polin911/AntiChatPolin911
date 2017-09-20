@@ -11,14 +11,14 @@ import Foundation
 class ChatMessage: NSObject {
     
     var username: String
-    var message : String
+    var text : String
     var time    : String
     var image   : String
 
     
-    init(username: String, message: String, time: String, image: String) {
+    init(username: String, text: String, time: String, image: String) {
         self.username = username
-        self.message  = message
+        self.text     = text
         self.time     = time
         self.image    = image
   

@@ -17,13 +17,10 @@
 		36461D631F6D5563009C2447 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36461D621F6D5563009C2447 /* ChatMessage.swift */; };
 		36461D661F6D57DD009C2447 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36461D651F6D57DD009C2447 /* ChatCell.swift */; };
 		36461D6A1F6E5F8C009C2447 /* PubNubConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36461D691F6E5F8C009C2447 /* PubNubConnection.swift */; };
-		36461D6C1F6E7877009C2447 /* MenuTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36461D6B1F6E7877009C2447 /* MenuTVC.swift */; };
-		36461D6E1F6E7ABD009C2447 /* MenuTranManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36461D6D1F6E7ABD009C2447 /* MenuTranManager.swift */; };
 		36461D701F6E7EB9009C2447 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36461D6F1F6E7EB9009C2447 /* Global.swift */; };
 		36461D721F6E8D37009C2447 /* ChageUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36461D711F6E8D37009C2447 /* ChageUserCell.swift */; };
 		36461D741F6E99EF009C2447 /* PubTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36461D731F6E99EF009C2447 /* PubTest.swift */; };
 		36461D761F6EA2EC009C2447 /* PubNub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36461D751F6EA2EC009C2447 /* PubNub.framework */; };
-		36461D781F6EA2F4009C2447 /* CocoaLumberjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36461D771F6EA2F4009C2447 /* CocoaLumberjack.framework */; };
 		36461D7A1F7104E1009C2447 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36461D791F7104E1009C2447 /* WelcomeVC.swift */; };
 		36461D7C1F710983009C2447 /* imgCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36461D7B1F710983009C2447 /* imgCollectionCell.swift */; };
 		36461D7E1F710F7D009C2447 /* NameChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36461D7D1F710F7D009C2447 /* NameChatCell.swift */; };
@@ -45,13 +42,10 @@
 		36461D651F6D57DD009C2447 /* ChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		36461D681F6D5B1C009C2447 /* PubChat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PubChat.h; sourceTree = "<group>"; };
 		36461D691F6E5F8C009C2447 /* PubNubConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PubNubConnection.swift; sourceTree = "<group>"; };
-		36461D6B1F6E7877009C2447 /* MenuTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTVC.swift; sourceTree = "<group>"; };
-		36461D6D1F6E7ABD009C2447 /* MenuTranManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTranManager.swift; sourceTree = "<group>"; };
 		36461D6F1F6E7EB9009C2447 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		36461D711F6E8D37009C2447 /* ChageUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChageUserCell.swift; sourceTree = "<group>"; };
 		36461D731F6E99EF009C2447 /* PubTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PubTest.swift; sourceTree = "<group>"; };
 		36461D751F6EA2EC009C2447 /* PubNub.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PubNub.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/AntiChatPolin911-chwiegihtoyfmiaicwzmlawmlgsh/Build/Products/Debug-iphonesimulator/PubNub/PubNub.framework"; sourceTree = "<group>"; };
-		36461D771F6EA2F4009C2447 /* CocoaLumberjack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjack.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/AntiChatPolin911-chwiegihtoyfmiaicwzmlawmlgsh/Build/Products/Debug-iphonesimulator/CocoaLumberjack/CocoaLumberjack.framework"; sourceTree = "<group>"; };
 		36461D791F7104E1009C2447 /* WelcomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		36461D7B1F710983009C2447 /* imgCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = imgCollectionCell.swift; sourceTree = "<group>"; };
 		36461D7D1F710F7D009C2447 /* NameChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameChatCell.swift; sourceTree = "<group>"; };
@@ -68,7 +62,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36461D781F6EA2F4009C2447 /* CocoaLumberjack.framework in Frameworks */,
 				36461D761F6EA2EC009C2447 /* PubNub.framework in Frameworks */,
 				0EB68EA9B5AD6D94496553D2 /* Pods_AntiChatPolin911.framework in Frameworks */,
 			);
@@ -135,8 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				36461D651F6D57DD009C2447 /* ChatCell.swift */,
-				36461D6B1F6E7877009C2447 /* MenuTVC.swift */,
-				36461D6D1F6E7ABD009C2447 /* MenuTranManager.swift */,
 				36461D711F6E8D37009C2447 /* ChageUserCell.swift */,
 				36461D7B1F710983009C2447 /* imgCollectionCell.swift */,
 				36461D7D1F710F7D009C2447 /* NameChatCell.swift */,
@@ -159,7 +150,6 @@
 		589FC024779A2BECEB30D3BF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				36461D771F6EA2F4009C2447 /* CocoaLumberjack.framework */,
 				36461D751F6EA2EC009C2447 /* PubNub.framework */,
 				BB92E116ED304BE40F8E8C44 /* Pods_AntiChatPolin911.framework */,
 			);
@@ -310,9 +300,7 @@
 				36461D4A1F6D53DF009C2447 /* AppDelegate.swift in Sources */,
 				36461D7E1F710F7D009C2447 /* NameChatCell.swift in Sources */,
 				36461D721F6E8D37009C2447 /* ChageUserCell.swift in Sources */,
-				36461D6E1F6E7ABD009C2447 /* MenuTranManager.swift in Sources */,
 				36461D821F714A1F009C2447 /* UsersCell.swift in Sources */,
-				36461D6C1F6E7877009C2447 /* MenuTVC.swift in Sources */,
 				36461D6A1F6E5F8C009C2447 /* PubNubConnection.swift in Sources */,
 				36461D841F718476009C2447 /* Glow.swift in Sources */,
 				36461D701F6E7EB9009C2447 /* Global.swift in Sources */,

@@ -75,8 +75,8 @@
                                                     <segue destination="6ug-76-7Ll" kind="show" id="ubB-rM-7tN"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IRm-UI-i7N">
-                                                <rect key="frame" x="322" y="8" width="45" height="34"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IRm-UI-i7N">
+                                                <rect key="frame" x="322" y="8" width="45" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="45" id="iHO-7M-5bB"/>
                                                 </constraints>
@@ -371,7 +371,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="SoC-s9-1L2">
-                                        <rect key="frame" x="8" y="120" width="359" height="428"/>
+                                        <rect key="frame" x="8" y="130" width="359" height="408"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Привет! Для начала напиши свой ник нейм и выбери себе персонажа." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgY-nV-Dfh">
                                                 <rect key="frame" x="54.5" y="0.0" width="250" height="70"/>
@@ -452,14 +452,14 @@
                                                 </cells>
                                             </collectionView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="11u-Nm-5Ah">
-                                                <rect key="frame" x="139.5" y="298" width="80" height="70"/>
+                                                <rect key="frame" x="139.5" y="298" width="80" height="80"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="70" id="B2f-jb-DG4"/>
+                                                    <constraint firstAttribute="height" constant="80" id="B2f-jb-DG4"/>
                                                     <constraint firstAttribute="width" constant="80" id="Qsm-db-I9R"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZT-g3-Yj0" customClass="CustomBorderButton" customModule="AntiChatPolin911" customModuleProvider="target">
-                                                <rect key="frame" x="141.5" y="398" width="76" height="30"/>
+                                                <rect key="frame" x="141.5" y="408" width="76" height="0.0"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="76" id="kE5-eC-lfB"/>
                                                 </constraints>
@@ -483,11 +483,18 @@
                                             </button>
                                         </subviews>
                                     </stackView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poke" translatesAutoresizingMaskIntoConstraints="NO" id="IiH-us-WfK">
+                                        <rect key="frame" x="8" y="22" width="359" height="92"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="SoC-s9-1L2" firstAttribute="centerY" secondItem="QCW-dj-C5L" secondAttribute="centerY" id="HwL-Ee-c3J"/>
                                     <constraint firstItem="SoC-s9-1L2" firstAttribute="centerX" secondItem="QCW-dj-C5L" secondAttribute="centerX" id="Inm-0y-Vdn"/>
+                                    <constraint firstAttribute="trailing" secondItem="IiH-us-WfK" secondAttribute="trailing" constant="8" id="TeN-BF-C7z"/>
+                                    <constraint firstItem="SoC-s9-1L2" firstAttribute="top" secondItem="IiH-us-WfK" secondAttribute="bottom" constant="16" id="Wsk-69-gHo"/>
+                                    <constraint firstItem="IiH-us-WfK" firstAttribute="leading" secondItem="QCW-dj-C5L" secondAttribute="leading" constant="8" id="iWc-La-HwE"/>
+                                    <constraint firstItem="IiH-us-WfK" firstAttribute="top" secondItem="QCW-dj-C5L" secondAttribute="top" constant="22" id="iwh-zE-67J"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -506,7 +513,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PzN-RX-YCb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-679" y="139"/>
+            <point key="canvasLocation" x="-679.20000000000005" y="138.98050974512745"/>
         </scene>
     </scenes>
     <resources>
@@ -1521,5 +1528,6 @@ AL8AxADbAN0A3+qB6obqkeqa6q3qseq86sXqyurS6tXq2urp6u3q9Or86wnrDusQ6xLrF+sf6yLrJ+sv
 6zLrROtH60wAAAAAAAACAQAAAAAAAABBAAAAAAAAAAAAAAAAAADrTg
 </mutableData>
         </image>
+        <image name="poke" width="582" height="133"/>
     </resources>
 </document>

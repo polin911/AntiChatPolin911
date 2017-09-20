@@ -9,7 +9,7 @@
 import UIKit
 import PubNub
 
-class MainVC: UIViewController, PNObjectEventListener, MenuTransitionManagerDelegate {
+class MainVC: UIViewController, PNObjectEventListener {
 
     @IBOutlet var segment: UISegmentedControl!
     
@@ -18,7 +18,7 @@ class MainVC: UIViewController, PNObjectEventListener, MenuTransitionManagerDele
     @IBOutlet var chatNameLbl: UILabel!
     @IBOutlet var chatTableView: UITableView!
     
-    var menuTransitionManager = MenuTransitionManager()
+   // var menuTransitionManager = MenuTransitionManager()
     var kPreferredTextFieldToKeyboardOffset: CGFloat = 70.0
     var keyboardFrame: CGRect = CGRect.null
     var keyboardIsShowing: Bool = false
@@ -54,18 +54,6 @@ class MainVC: UIViewController, PNObjectEventListener, MenuTransitionManagerDele
     }
     ///////////////////////////////MARK: PubNubConnection
 
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let menuTableViewController = segue.destination as! MenuTableViewController
-//        menuTableViewController.transitioningDelegate = self.menuTransitionManager
-//        self.menuTransitionManager.delegate = self
-//    }
-//        
-//    }
-//
-//    
-    func dismiss() {
-        self.dismiss(animated: true, completion: nil)
-    }
     
     func initPubNub(){
         let appDel = UIApplication.shared.delegate! as! AppDelegate
@@ -129,13 +117,12 @@ class MainVC: UIViewController, PNObjectEventListener, MenuTransitionManagerDele
                 let json = jsonMsg["message"] as? NSDictionary
                 // if(json?["type"] as AnyObject? as? String != "Chat"){ continue }
                 let usernameJson = (json?["username"] as AnyObject? as? String) ?? "" // to get rid of null
-                let namesJson = (json?["name"] as AnyObject? as? String) ?? ""
-                let textJson  = (json?["message"]  as AnyObject? as? String) ?? ""
+                let textJson  = (json?["text"]  as AnyObject? as? String) ?? ""
                 let timeJson  = (json?["time"]  as AnyObject? as? String) ?? ""
                 let imgJson   = (json?["image"] as AnyObject as? String) ?? ""
                 
                 
-                list.append(ChatMessage(username: usernameJson, message: textJson, time: timeJson, image: imgJson))
+                list.append(ChatMessage(username: usernameJson, text: textJson, time: timeJson, image: imgJson))
             }
            chatTableView.reloadData()
             
@@ -193,13 +180,15 @@ class MainVC: UIViewController, PNObjectEventListener, MenuTransitionManagerDele
         print("*******UUID from message IS \(message.uuid)")
         
         var stringData  = message.data.message as? NSDictionary
+
+        
         var stringName  = stringData?["username"] as? String ?? ""
-        var stringText  = stringData?["message"] as? String ?? ""
+        var stringText  = stringData?["text"] as? String ?? ""
         var stringTime  = stringData?["time"] as? String ?? ""
         var stringImg   = stringData?["image"] as? String ?? ""
         
         
-        var newMessage = ChatMessage(username: stringName, message: stringText, time: stringTime, image: stringImg)
+        var newMessage = ChatMessage(username: stringName, text: stringText, time: stringTime, image: stringImg)
         
         chatMesArray.append(newMessage)
         updateChat()
@@ -220,12 +209,12 @@ class MainVC: UIViewController, PNObjectEventListener, MenuTransitionManagerDele
         
         switch event.data.presenceEvent{
         case "join":
-            var pubChat = ChatMessage(username:"", message: "\(userName) присоединился к нам!", time: getTime(), image: "")
+            var pubChat = ChatMessage(username:"", text: "\(userName) присоединился к нам!", time: getTime(), image: "")
             
             chatMesArray.append(pubChat)
             
         case "leave":
-            var pubChat = ChatMessage(username: "", message: "\(event.data.presence.uuid?.uppercased()) left the chat", time: getTime(),image: "")
+            var pubChat = ChatMessage(username: "", text: "\(event.data.presence.uuid?.uppercased()) left the chat", time: getTime(),image: "")
             chatMesArray.append(pubChat)
             
 //        case "timeout":
@@ -233,7 +222,7 @@ class MainVC: UIViewController, PNObjectEventListener, MenuTransitionManagerDele
 //            chatMesArray.append(pubChat)
             
         default:
-            var pubChat = ChatMessage(username: "", message: "\(event.data.presence.uuid?.uppercased()) - \(userName) покинул нас", time: getTime(),image: "")
+            var pubChat = ChatMessage(username: "", text: "\(event.data.presence.uuid?.uppercased()) - \(userName) покинул нас", time: getTime(),image: "")
             //chatMesArray.append(pubChat)
             
         }
@@ -279,7 +268,7 @@ class MainVC: UIViewController, PNObjectEventListener, MenuTransitionManagerDele
         let message = messageTxtField.text
         if(message == "") {return}
         else{
-            let pubChat = ChatMessage(username: userName, message: messageTxtField.text!, time: getTime(), image: imgName)
+            let pubChat = ChatMessage(username: userName, text: messageTxtField.text!, time: getTime(), image: imgName)
             
             let newDict = chatMessageToDictionary(pubChat)
             
@@ -304,7 +293,7 @@ extension MainVC: UITableViewDataSource {
         
       
         cell.chatNameLbl.text = chatMesArray[indexPath.row].username
-        cell.chatTxtLbl.text  = chatMesArray[indexPath.row].message
+        cell.chatTxtLbl.text  = chatMesArray[indexPath.row].text
         cell.chatImage.image  = UIImage(named:(chatMesArray[indexPath.row].image))
         cell.timeLbl.text     = chatMesArray[indexPath.row].time
         

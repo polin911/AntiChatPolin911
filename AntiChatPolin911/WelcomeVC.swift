@@ -31,7 +31,7 @@ class WelcomeVC: UIViewController {
 /////////////////MARK: AlertFunction
     func changeNameModal() {
         
-        var loginAlert:UIAlertController = UIAlertController(title: "Имя", message: "Пожалуйста введите свое имя или ник", preferredStyle: UIAlertControllerStyle.alert)
+        var loginAlert:UIAlertController = UIAlertController(title: "Имя", message: "Введите свое имя или ник", preferredStyle: UIAlertControllerStyle.alert)
         
         loginAlert.addTextField(configurationHandler: {
             textfield in
