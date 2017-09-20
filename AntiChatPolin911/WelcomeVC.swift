@@ -10,11 +10,12 @@ import UIKit
 
 class WelcomeVC: UIViewController {
 
+    @IBOutlet var userWelcomeImg: UIImageView!
     var menuItems = ["Имя", "Чат"]
     var imgNameArray = ["1.png", "2.png", "3.png","4.png", "5.png", "6.png","7.png", "8.png","9.png", "10.png","11.png", "12.png", "13.png","14.png", "15.png", "16.png","17.png", "18.png","19.png", "20.png", "21.png", "22.png", "23.png","24.png", "25.png", "26.png","27.png", "28.png","29.png", "30.png","31.png", "32.png", "33.png","34.png", "35.png", "36.png","37.png", "38.png","39.png", "40.png","41.png", "42.png", "43.png","44.png", "45.png"]
     
     
-    @IBOutlet var tableViewNameChat: UITableView!
+
     @IBOutlet var viewCollectionImg: UICollectionView!
     
     override func viewDidLoad() {
@@ -24,8 +25,6 @@ class WelcomeVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     func uploadView() {
-        tableViewNameChat.delegate   = self
-        tableViewNameChat.dataSource = self
         viewCollectionImg.dataSource = self
         viewCollectionImg.delegate   = self
     }
@@ -88,38 +87,21 @@ class WelcomeVC: UIViewController {
         //let appDel = UIApplication.shared.delegate! as! AppDelegate
         
     }
-
-}
-extension WelcomeVC: UITableViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        imgName = ("\(imgNameArray[indexPath.row])")
+    
+    @IBAction func createNameBtnPressed(_ sender: Any) {
+    changeNameModal()
     }
+   
+    
+
 }
 extension WelcomeVC: UICollectionViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            changeNameModal()
-        }
-        if indexPath.row == 1 {
-            changeChatModal()
-        }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        imgName = ("\(imgNameArray[indexPath.row])")
+        userWelcomeImg.image = UIImage(named: imgNameArray[indexPath.row])
     }
-    
 }
 
-extension WelcomeVC: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return menuItems.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableViewNameChat.dequeueReusableCell(withIdentifier: "nameChatCell", for: indexPath) as! NameChatCell
-        
-        cell.nameChatLb.text = menuItems[indexPath.row]
-        return cell
-    }
-}
 
 extension WelcomeVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -132,6 +114,7 @@ extension WelcomeVC: UICollectionViewDataSource {
         
         let cell = viewCollectionImg.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath) as! imgCollectionCell
         cell.imgCollection.image = UIImage(named: imgNameArray[indexPath.row])
+     
         
         return cell
     }

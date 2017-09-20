@@ -11,6 +11,8 @@ import PubNub
 
 class MainVC: UIViewController, PNObjectEventListener, MenuTransitionManagerDelegate {
 
+    @IBOutlet var segment: UISegmentedControl!
+    
     @IBOutlet var userImg: UIImageView!
     
     @IBOutlet var chatNameLbl: UILabel!
@@ -191,10 +193,10 @@ class MainVC: UIViewController, PNObjectEventListener, MenuTransitionManagerDele
         print("*******UUID from message IS \(message.uuid)")
         
         var stringData  = message.data.message as? NSDictionary
-        var stringName  = stringData?["username"] as! String
-        var stringText  = stringData?["message"] as! String
-        var stringTime  = stringData?["time"] as! String
-        var stringImg   = stringData?["image"] as! String
+        var stringName  = stringData?["username"] as? String ?? ""
+        var stringText  = stringData?["message"] as? String ?? ""
+        var stringTime  = stringData?["time"] as? String ?? ""
+        var stringImg   = stringData?["image"] as? String ?? ""
         
         
         var newMessage = ChatMessage(username: stringName, message: stringText, time: stringTime, image: stringImg)
@@ -212,12 +214,13 @@ class MainVC: UIViewController, PNObjectEventListener, MenuTransitionManagerDele
         
         var occ = event.data.presence.occupancy.stringValue
         //occupancyButton.setTitle(occ, for: UIControlState())
+        segment.setTitle("Участников: \(occ)", forSegmentAt: 1)
         
         
         
         switch event.data.presenceEvent{
         case "join":
-            var pubChat = ChatMessage(username: "", message: "\(event.data.presence.uuid?.uppercased())", time: getTime(), image: "")
+            var pubChat = ChatMessage(username:"", message: "\(userName) присоединился к нам!", time: getTime(), image: "")
             
             chatMesArray.append(pubChat)
             
@@ -225,13 +228,13 @@ class MainVC: UIViewController, PNObjectEventListener, MenuTransitionManagerDele
             var pubChat = ChatMessage(username: "", message: "\(event.data.presence.uuid?.uppercased()) left the chat", time: getTime(),image: "")
             chatMesArray.append(pubChat)
             
-        case "timeout":
-            var pubChat = ChatMessage(username: "", message: "\(event.data.presence.uuid?.uppercased()) has timed out", time: getTime(),image: "")
-            chatMesArray.append(pubChat)
+//        case "timeout":
+//            var pubChat = ChatMessage(username: "", message: "\(event.data.presence.uuid?.uppercased()) - \(userName) покинул нас", time: getTime(),image: "")
+//            chatMesArray.append(pubChat)
             
         default:
-            var pubChat = ChatMessage(username: "", message: "\(event.data.presence.uuid?.uppercased()) has timed out", time: getTime(),image: "")
-            chatMesArray.append(pubChat)
+            var pubChat = ChatMessage(username: "", message: "\(event.data.presence.uuid?.uppercased()) - \(userName) покинул нас", time: getTime(),image: "")
+            //chatMesArray.append(pubChat)
             
         }
         
