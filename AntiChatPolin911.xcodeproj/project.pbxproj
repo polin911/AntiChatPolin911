@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0EB68EA9B5AD6D94496553D2 /* Pods_AntiChatPolin911.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB92E116ED304BE40F8E8C44 /* Pods_AntiChatPolin911.framework */; };
 		36461D4A1F6D53DF009C2447 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36461D491F6D53DF009C2447 /* AppDelegate.swift */; };
 		36461D4F1F6D53DF009C2447 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36461D4D1F6D53DF009C2447 /* Main.storyboard */; };
 		36461D521F6D53DF009C2447 /* AntiChatPolin911.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 36461D501F6D53DF009C2447 /* AntiChatPolin911.xcdatamodeld */; };
@@ -53,7 +52,6 @@
 		36461D811F714A1F009C2447 /* UsersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersCell.swift; sourceTree = "<group>"; };
 		36461D831F718476009C2447 /* Glow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Glow.swift; sourceTree = "<group>"; };
 		424DF90D537A4E1FB572D5E4 /* Pods-AntiChatPolin911.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AntiChatPolin911.release.xcconfig"; path = "Pods/Target Support Files/Pods-AntiChatPolin911/Pods-AntiChatPolin911.release.xcconfig"; sourceTree = "<group>"; };
-		BB92E116ED304BE40F8E8C44 /* Pods_AntiChatPolin911.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AntiChatPolin911.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD59902E5ECB0D7ADB93030 /* Pods-AntiChatPolin911.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AntiChatPolin911.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AntiChatPolin911/Pods-AntiChatPolin911.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,7 +61,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				36461D761F6EA2EC009C2447 /* PubNub.framework in Frameworks */,
-				0EB68EA9B5AD6D94496553D2 /* Pods_AntiChatPolin911.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,7 +148,6 @@
 			isa = PBXGroup;
 			children = (
 				36461D751F6EA2EC009C2447 /* PubNub.framework */,
-				BB92E116ED304BE40F8E8C44 /* Pods_AntiChatPolin911.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
