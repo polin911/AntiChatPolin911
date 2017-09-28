@@ -26,9 +26,12 @@
 		36461D801F7149AD009C2447 /* UsersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36461D7F1F7149AD009C2447 /* UsersVC.swift */; };
 		36461D821F714A1F009C2447 /* UsersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36461D811F714A1F009C2447 /* UsersCell.swift */; };
 		36461D841F718476009C2447 /* Glow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36461D831F718476009C2447 /* Glow.swift */; };
+		36D2CC631F7D18B7008E23EE /* SticerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D2CC621F7D18B7008E23EE /* SticerCell.swift */; };
+		F079DA926E5B8415491AFF44 /* Pods_AntiChatPolin911.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08CEF20C284E5E8D597E1CDA /* Pods_AntiChatPolin911.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		08CEF20C284E5E8D597E1CDA /* Pods_AntiChatPolin911.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AntiChatPolin911.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36461D461F6D53DF009C2447 /* AntiChatPolin911.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AntiChatPolin911.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36461D491F6D53DF009C2447 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36461D4E1F6D53DF009C2447 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -51,6 +54,7 @@
 		36461D7F1F7149AD009C2447 /* UsersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersVC.swift; sourceTree = "<group>"; };
 		36461D811F714A1F009C2447 /* UsersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersCell.swift; sourceTree = "<group>"; };
 		36461D831F718476009C2447 /* Glow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Glow.swift; sourceTree = "<group>"; };
+		36D2CC621F7D18B7008E23EE /* SticerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SticerCell.swift; sourceTree = "<group>"; };
 		424DF90D537A4E1FB572D5E4 /* Pods-AntiChatPolin911.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AntiChatPolin911.release.xcconfig"; path = "Pods/Target Support Files/Pods-AntiChatPolin911/Pods-AntiChatPolin911.release.xcconfig"; sourceTree = "<group>"; };
 		FAD59902E5ECB0D7ADB93030 /* Pods-AntiChatPolin911.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AntiChatPolin911.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AntiChatPolin911/Pods-AntiChatPolin911.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,6 +65,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36461D761F6EA2EC009C2447 /* PubNub.framework in Frameworks */,
+				F079DA926E5B8415491AFF44 /* Pods_AntiChatPolin911.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +134,7 @@
 				36461D7B1F710983009C2447 /* imgCollectionCell.swift */,
 				36461D7D1F710F7D009C2447 /* NameChatCell.swift */,
 				36461D811F714A1F009C2447 /* UsersCell.swift */,
+				36D2CC621F7D18B7008E23EE /* SticerCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -148,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				36461D751F6EA2EC009C2447 /* PubNub.framework */,
+				08CEF20C284E5E8D597E1CDA /* Pods_AntiChatPolin911.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -290,6 +297,7 @@
 				36461D741F6E99EF009C2447 /* PubTest.swift in Sources */,
 				36461D7A1F7104E1009C2447 /* WelcomeVC.swift in Sources */,
 				36461D7C1F710983009C2447 /* imgCollectionCell.swift in Sources */,
+				36D2CC631F7D18B7008E23EE /* SticerCell.swift in Sources */,
 				36461D801F7149AD009C2447 /* UsersVC.swift in Sources */,
 				36461D601F6D550F009C2447 /* MainVC.swift in Sources */,
 				36461D661F6D57DD009C2447 /* ChatCell.swift in Sources */,

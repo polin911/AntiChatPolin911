@@ -15,6 +15,8 @@ class ChatCell: UITableViewCell {
     @IBOutlet var chatTxtLbl: UILabel!
     @IBOutlet var chatImage: UIImageView!
     
+    @IBOutlet var imgSticker: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -14,13 +14,16 @@ class ChatMessage: NSObject {
     var text : String
     var time    : String
     var image   : String
+    
+    var imgSticker: String
 
     
-    init(username: String, text: String, time: String, image: String) {
+    init(username: String, text: String, time: String, image: String, imgSticker: String) {
         self.username = username
         self.text     = text
         self.time     = time
         self.image    = image
+        self.imgSticker = imgSticker
   
     }
     
