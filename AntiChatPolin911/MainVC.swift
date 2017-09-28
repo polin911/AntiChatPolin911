@@ -27,7 +27,7 @@ class MainVC: UIViewController, PNObjectEventListener {
     
     var introModalDidDisplay = false
     
-    var imgStrickersString = ["s1.png","s2.png","s3.png","s4.png","s5.png", "s6.png","s7.png","s8.png","s9.png","s10.png","s11.png","s12.png"]
+    var imgStrickersString = ["s1.png","s2.png","s3.png","s4.png","s5.png", "s6.png","s7.png","s8.png","s9.png","s10.png","s11.png","s12.png","s13.png","s14.png","s15.png","s16.png"]
     
     
     override func viewDidLoad() {
