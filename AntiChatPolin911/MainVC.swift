@@ -27,6 +27,9 @@ class MainVC: UIViewController, PNObjectEventListener {
     
     var introModalDidDisplay = false
     
+    var imgStrickersString = ["s1.png","s2.png","s3.png","s4.png","s5.png", "s6.png","s7.png","s8.png","s9.png","s10.png","s11.png","s12.png"]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,6 +49,9 @@ class MainVC: UIViewController, PNObjectEventListener {
     fileprivate func extractedFunc() {
         self.chatTableView.delegate   = self
         self.chatTableView.dataSource = self
+        
+        self.stickerCollectionView.delegate   = self
+        self.stickerCollectionView.dataSource = self
         initPubNub()
         updateTableview()
         userImg.image = UIImage(named: imgName)
@@ -262,12 +268,23 @@ class MainVC: UIViewController, PNObjectEventListener {
     }
     
     @IBAction func stickerBtnPressed(_ sender: Any) {
+        stickerCollectionView.isHidden = false
     }
     
     @IBAction func buttonNamePressed(_ sender: Any) {
         initPubNub()
         print("pressed")
         updateTableview()
+    }
+    
+    func updateStickers() {
+        let appDel = UIApplication.shared.delegate! as! AppDelegate
+        let pubChat = ChatMessage(username: userName, text: messageTxtField.text!, time: getTime(), image: imgName, imgSticker: imgSticker)
+        let newDict = chatMessageToDictionary(pubChat)
+        
+        appDel.client?.publish(newDict, toChannel: chan, compressed: true, withCompletion: nil)
+        updateTableview()
+        
     }
     
     @IBAction func senderBtnPressed(_ sender: Any) {
@@ -305,6 +322,8 @@ extension MainVC: UITableViewDataSource {
         cell.chatImage.image  = UIImage(named:(chatMesArray[indexPath.row].image))
         cell.timeLbl.text     = chatMesArray[indexPath.row].time
         
+        
+        cell.imgSticker.image = UIImage(named:(chatMesArray[indexPath.row].imgSticker))
         return cell
     }
     
@@ -312,3 +331,33 @@ extension MainVC: UITableViewDataSource {
         return chatMesArray.count
     }
 }
+extension MainVC: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let currentSticker = imgStrickersString[indexPath.row]
+        imgSticker = currentSticker
+        stickerCollectionView.isHidden = true
+        updateStickers()
+        
+    }
+    
+}
+
+extension MainVC: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return imgStrickersString.count
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = stickerCollectionView.dequeueReusableCell(withReuseIdentifier: "StickerCell", for: indexPath) as! SticerCell
+        cell.sticerImage.image = UIImage(named: imgStrickersString[indexPath.row])
+        return cell
+    }
+}
+
+
+
+
